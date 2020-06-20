@@ -1,10 +1,35 @@
 <template>
   <div>
-    <nuxt />
+    <div class="pageContainer">
+      <TopBar />
+      <nuxt />
+    </div>
+    <Footer />
   </div>
 </template>
 
+<script>
+import TopBar from '@/components/TopBar';
+import Footer from '@/components/Footer';
+
+export default {
+  components: {
+    TopBar,
+    Footer,
+  },
+};
+</script>
+
 <style>
+.pageContainer {
+  border-bottom: 1px solid var(--white);
+  margin-bottom: var(--footer-height);
+  min-height: 100vh;
+  z-index: 10;
+  background: var(--black);
+  color: var(--white);
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
