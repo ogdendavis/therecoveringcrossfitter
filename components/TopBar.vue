@@ -12,8 +12,8 @@ export default {};
 div {
   position: sticky;
   top: 0;
-  background: var(--black);
   border-bottom: 1px solid var(--white);
-  padding: 1rem;
+  padding: 1rem 2rem;
+  background: var(--black);
 }
 </style>

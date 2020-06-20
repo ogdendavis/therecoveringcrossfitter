@@ -4,3 +4,10 @@
   --black: #2a2a2e;
   --footer-height: 200px;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
