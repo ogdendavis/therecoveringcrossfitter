@@ -3,6 +3,7 @@
     <PostPreview
       v-for="post in posts"
       :key="post.id"
+      :postid="post.id"
       :title="post.title"
       :text="post.content"
     />
