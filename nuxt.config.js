@@ -25,6 +25,11 @@ export default {
       { name: 'theme-color', content: '#000000' },
     ],
     link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato:wght@300;400;700&display=swap',
+      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -57,7 +62,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/normalize.css', '~/assets/global.css'],
+  css: [
+    '~/assets/normalize.css',
+    '~/assets/typography.css',
+    '~/assets/global.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
