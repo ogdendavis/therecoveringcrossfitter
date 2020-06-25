@@ -13,7 +13,7 @@ export default {
   props: {
     title: { type: String, default: 'Post Title' },
     text: { type: String, default: 'Teaser text' },
-    postid: { type: String, default: '0' },
+    postid: { type: Number, default: 0 },
   },
 };
 </script>

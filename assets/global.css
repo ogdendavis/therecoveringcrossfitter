@@ -6,6 +6,8 @@
   --yellow: #ffe800;
   --orange: #ff9200;
   --footer-height: 200px;
+  --sidebar-width: 200px;
+  --gutter-width: 2rem;
 }
 
 *,

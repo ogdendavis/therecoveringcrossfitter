@@ -10,6 +10,6 @@ export default {};
 
 <style scoped>
 aside {
-  min-width: 200px;
+  min-width: var(--sidebar-width);
 }
 </style>

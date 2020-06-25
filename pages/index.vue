@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <section class="posts">
-      <PostPreview
-        v-for="post in posts"
-        :key="post.id"
-        :postid="post.id"
-        :title="post.title"
-        :text="post.content"
-      />
-    </section>
-  </div>
+  <section class="posts">
+    <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :postid="post.id"
+      :title="post.title.rendered"
+      :text="post.excerpt"
+    />
+  </section>
 </template>
 
 <script>
@@ -31,9 +29,8 @@ export default {
 </script>
 
 <style scoped>
-div {
-}
 .posts {
   min-width: 350px;
+  max-width: calc(100% - var(--sidebar-width) - var(--gutter-width));
 }
 </style>
