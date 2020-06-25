@@ -1,6 +1,7 @@
 <template>
   <div v-if="post">
     <h1>{{ post.title.rendered }}</h1>
+    <img v-if="post.featured" class="featured-img" :src="post.featured" />
     {{ /* eslint-disable-next-line */ }}
     <div v-html="post.content.rendered" />
   </div>
@@ -31,4 +32,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.featured-img {
+  max-height: 400px;
+}
+</style>
