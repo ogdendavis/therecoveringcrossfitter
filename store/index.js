@@ -34,15 +34,12 @@ export const actions = {
           date,
           content,
         }));
-      // Strip the excerpt down to just text
-      const dp = new DOMParser();
+      // Strip the excerpt down to just text by removing initial <p> tag and the end starting at <a... tag
+      /* TODO: Fix this to not use DOMParser */
       posts.forEach((post) => {
-        const ex =
-          dp.parseFromString(post.excerpt.rendered, 'text/html').body
-            .childNodes[0].firstChild.nodeValue + '...';
-        post.excerpt = ex;
-        // eslint-disable-next-line
-        console.log(post);
+        const endSlice = post.excerpt.rendered.indexOf('<a');
+        const ex = post.excerpt.rendered.slice(3, endSlice) + '...';
+        post.excerpt.rendered = ex;
       });
       // Use Nuxt's commit function to load the posts into state
       commit('loadPosts', posts);

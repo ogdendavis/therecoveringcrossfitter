@@ -2,10 +2,12 @@
   <div>
     <div class="pageContainer">
       <TopBar />
-      <main>
-        <nuxt />
+      <div class="contentContainer">
+        <main>
+          <nuxt />
+        </main>
         <Sidebar />
-      </main>
+      </div>
     </div>
     <Footer />
   </div>
@@ -34,13 +36,17 @@ export default {
   background: var(--black);
   color: var(--white);
 }
-main {
-  background: var(--black);
-  color: var(--white);
-  padding: 1rem 2rem;
+.contentContainer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
+}
+main {
+  background: var(--black);
+  color: var(--white);
+  padding: 1rem 2rem;
+  min-width: 350px;
+  max-width: calc(100% - var(--sidebar-width) - var(--gutter-width));
 }
 </style>

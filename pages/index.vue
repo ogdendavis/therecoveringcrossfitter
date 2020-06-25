@@ -1,21 +1,24 @@
 <template>
-  <section class="posts">
+  <section v-if="posts" class="posts">
     <PostPreview
       v-for="post in posts"
       :key="post.id"
       :postid="post.id"
       :title="post.title.rendered"
-      :text="post.excerpt"
+      :text="post.excerpt.rendered"
     />
   </section>
+  <Loader v-else />
 </template>
 
 <script>
 import PostPreview from '@/components/PostPreview';
+import Loader from '@/components/Loader';
 
 export default {
   components: {
     PostPreview,
+    Loader,
   },
   computed: {
     posts() {
@@ -28,9 +31,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.posts {
-  min-width: 350px;
-  max-width: calc(100% - var(--sidebar-width) - var(--gutter-width));
-}
-</style>
+<style scoped></style>
