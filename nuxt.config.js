@@ -88,4 +88,11 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  /*
+   * Add base path for WP REST API to env
+   */
+  env: {
+    apiPath:
+      'https://public-api.wordpress.com/wp/v2/sites/trcferbackend.wordpress.com',
+  },
 };

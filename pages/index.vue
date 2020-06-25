@@ -21,8 +21,11 @@ export default {
   },
   computed: {
     posts() {
-      return this.$store.state.posts.all;
+      return this.$store.state.posts;
     },
+  },
+  created() {
+    this.$store.dispatch('getPosts');
   },
 };
 </script>
