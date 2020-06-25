@@ -6,6 +6,7 @@
       :postid="post.id"
       :title="post.title.rendered"
       :text="post.excerpt.rendered"
+      :featured="post.featured"
     />
   </section>
   <Loader v-else />

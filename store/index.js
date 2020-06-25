@@ -26,14 +26,16 @@ export const actions = {
       // Filter out the unpublished posts, and create post objects with only the data we want
       const posts = wpPosts
         .filter((p) => p.status === 'publish')
-        .map(({ id, slug, title, excerpt, date, content }) => ({
-          id,
-          slug,
-          title,
-          excerpt,
-          date,
-          content,
+        .map((po) => ({
+          id: po.id,
+          slug: po.slug,
+          title: po.title,
+          excerpt: po.excerpt,
+          date: po.date,
+          content: po.content,
+          featured: po.jetpack_featured_media_url,
         }));
+
       // Clean up post fields
       posts.forEach((post) => {
         // Strip the excerpt down to just text by removing initial <p> tag and the end starting at <a... tag
@@ -43,6 +45,7 @@ export const actions = {
         // Remove HTML space entities from longer post titles
         post.title.rendered = post.title.rendered.replace('&nbsp;', ' ');
       });
+
       // Use Nuxt's commit function to load the posts into state
       commit('loadPosts', posts);
     } catch (er) {
