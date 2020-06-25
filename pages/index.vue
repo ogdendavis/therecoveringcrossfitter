@@ -9,18 +9,15 @@
         :text="post.content"
       />
     </section>
-    <Sidebar />
   </div>
 </template>
 
 <script>
 import PostPreview from '@/components/PostPreview';
-import Sidebar from '@/components/Sidebar';
 
 export default {
   components: {
     PostPreview,
-    Sidebar,
   },
   computed: {
     posts() {
@@ -32,10 +29,6 @@ export default {
 
 <style scoped>
 div {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 .posts {
   min-width: 350px;
