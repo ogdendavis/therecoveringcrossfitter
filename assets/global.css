@@ -1,7 +1,10 @@
 /* Global variables */
 :root {
-  --white: #f9f9fa;
-  --black: #2a2a2e;
+  --white: #fcfcff;
+  --black: #47474b;
+  --blue: #2626ff;
+  --yellow: #ffe800;
+  --orange: #ff9200;
   --footer-height: 200px;
 }
 

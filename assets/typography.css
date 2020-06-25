@@ -1,3 +1,10 @@
+body {
+  font-family: 'Lato', sans-serif;
+  /* Vertical rhythm! */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 h1,
 h2,
 h3,
@@ -5,8 +12,18 @@ h4,
 h5,
 h6 {
   font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 1px;
+  word-spacing: 0.25rem;
 }
 
-body {
-  font-family: 'Lato', sans-serif;
+p {
+  /* Vertical rhythm! */
+  margin: 1.5em auto;
+}
+
+a {
+  color: var(--yellow);
+}
+a:visited {
+  color: var(--orange);
 }

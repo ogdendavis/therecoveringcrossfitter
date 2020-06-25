@@ -20,6 +20,6 @@ export default {
 
 <style scoped>
 article {
-  margin: 1rem 0;
+  margin: 1.5em 0;
 }
 </style>
