@@ -34,12 +34,14 @@ export const actions = {
           date,
           content,
         }));
-      // Strip the excerpt down to just text by removing initial <p> tag and the end starting at <a... tag
-      /* TODO: Fix this to not use DOMParser */
+      // Clean up post fields
       posts.forEach((post) => {
+        // Strip the excerpt down to just text by removing initial <p> tag and the end starting at <a... tag
         const endSlice = post.excerpt.rendered.indexOf('<a');
         const ex = post.excerpt.rendered.slice(3, endSlice) + '...';
         post.excerpt.rendered = ex;
+        // Remove HTML space entities from longer post titles
+        post.title.rendered = post.title.rendered.replace('&nbsp;', ' ');
       });
       // Use Nuxt's commit function to load the posts into state
       commit('loadPosts', posts);
